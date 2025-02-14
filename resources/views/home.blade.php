@@ -44,7 +44,7 @@
 
 			<!-- Mobile logo -->
 			<a href="#" class="mobile-logo mobile-logo-light bg-dark">
-				<span>Christian E Y</span>
+				<span>{{ $tb_m_header->firstname }}</span>
 			</a>
 
 			<!-- Navigation toggle -->
