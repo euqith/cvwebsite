@@ -705,7 +705,7 @@
                       <i class="ti-mobile"></i>
                     </div>
                   </div>
-                  <p class="text-center">(0091) 1111 1234567<br />
+                  <p class="text-center">(+62) 1111 1234567<br />
                     (084) 2222 1234567</p>
                 </div>
               </div>
