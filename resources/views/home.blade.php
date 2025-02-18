@@ -81,13 +81,13 @@
               <a href="#about" class="scrollto">About</a>
             </li>
             <li>
-              <a href="#services" class="scrollto">Services</a>
+              <a href="#skills" class="scrollto">Skills</a>
             </li>
-            <li>
+            {{-- <li>
               <a href="#portfolio" class="scrollto">Portfolio</a>
-            </li>
+            </li> --}}
             <li>
-              <a href="#news" class="scrollto">News</a>
+              <a href="#experience" class="scrollto">Experiences</a>
             </li>
             <li>
               <a href="#contact" class="scrollto">Contact</a>
@@ -203,6 +203,8 @@
     </div>
     </section>
 
+
+    {{-- section skills start --}}
     <section id="skills" class="bg-light">
       <div class="container">
         <div class="row mb-8">
@@ -215,35 +217,22 @@
               orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <p class="h6 mb-1">Social Media</p>
-            <div class="progress mb-6 rounded-0" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-            <p class="h6 mb-1">Project Management</p>
-            <div class="progress rounded-0" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100"></div>
+        @foreach ($dataskill as $dataskills)
+          <div class="row">
+            <div class="col-md-12 mb-4 mb-md-0">
+              <p class="h6 mb-1">{{ $dataskills->skill }}</p>
+              <div class="progress mb-6 rounded-0" style="height:5px">
+                <div class="progress-bar" role="progressbar" style="{{ 'width:' . $dataskills->percentage . '%' }}"
+                  aria-valuenow="{{ $dataskills->percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <p class="h6 mb-1">Analytical Knowledge</p>
-            <div class="progress mb-6 rounded-0" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-            <p class="h6 mb-1">Creativity & Expression</p>
-            <div class="progress rounded-0" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-                aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </section>
+    {{-- section skills end --}}
 
+    {{-- section experience start --}}
     <section id="experience" class="pb-0">
       <div class="container">
         <div class="section-title h2 text-center mb-8">
@@ -295,8 +284,10 @@
         </div>
       </div>
     </section>
+    {{-- section experience end --}}
 
-    <section id="services" class="pb-0">
+    {{-- section services start --}}
+    {{-- <section id="services" class="pb-0">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-10 col-xl-8 mx-lg-auto text-center">
@@ -388,9 +379,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
+    {{-- section services end --}}
 
-    <section id="portfolio">
+    {{-- section portofolio start --}}
+    {{-- <section id="portfolio">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-10 col-xl-8 mx-lg-auto text-center">
@@ -547,9 +540,10 @@
           </div>
         </div><!-- .portfolio-container end -->
       </div>
-    </section>
+    </section> --}}
+    {{-- section portofolio end --}}
 
-    <section>
+    {{-- <section>
       <div class="overlay">
         <div class="overlay-inner bg-image-holder bg-cover bg-center">
           <img src="demo/images/image-5.jpg" alt="background">
@@ -629,9 +623,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
-    <section id="news" class="pb-0">
+    {{-- <section id="news" class="pb-0">
       <div class="container">
         <div class="section-title h2 text-center mb-8">
           <h2 class="mb-0">Latest News</h2>
@@ -687,7 +681,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
     <section id="contact">
       <div class="container">

@@ -22,7 +22,7 @@ Currently, I work as an IT Support Analyst at PT. HM Sampoerna, where I have bee
 
 My career in IT began in 2018, giving me valuable hands-on experience in the field over the years. With a strong background in troubleshooting, system maintenance, and user support, I am always eager to learn and contribute to the success of the team and the company.',
             'jurusan1' => 'Information Technology Engineering',
-            'lokasipendidikan1' => 'cvprofile.jpg',
+            'lokasipendidikan1' => 'Institut Teknologi Surabaya',
             'tahunlulus1' => '2021',
             
         ]); 
