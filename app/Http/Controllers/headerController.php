@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\header; // Import model User
+use App\Models\profileModel; // import model profileModel
 
 class headerController extends Controller
 {
-   public function index (){
-     
-     $tb_m_header = Header::all();  // Kamu bisa menggunakan query lain seperti `User::where()` atau `User::paginate()`
-     dump($tb_m_header);
-    return view('home', compact('tb_m_header')); // Mengirim data ke view home
-   }
+   public function index()
+    {
+        // Mengambil semua data post
+        $data = header::GetList();
+        $dataprofile = profileModel::GetList();
+      //   var_dump($data);
+
+        // Mengirim data ke view
+        return view('home', ['data' => $data,'dataprofile'=>$dataprofile]);
+    }
 }

@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\headerController;
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', [HeaderController::class, 'index']);
- 
+
+Route::get('/',  [headerController::class, 'index']);
+
+
