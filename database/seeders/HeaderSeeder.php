@@ -18,8 +18,14 @@ class HeaderSeeder extends Seeder
             'firstname' => 'Christian',
             'lastname' =>'Eko Y',
             'jobposition' => 'IT Analyst',
+            'picturepath' => 'cvprofile.jpg',
             'createdby' => 'system',
             'updatedby' => 'system',
-        ]);
+            'initial' => 'CY',
+            'email' => 'admin@kurisu.id',
+            'phonenumber' => '082299226696',
+            'downloadpath'=>'',
+            'address' => 'Surabaya, Indonesia'
+        ]); 
 }
 }
