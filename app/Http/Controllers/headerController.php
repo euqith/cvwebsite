@@ -19,3 +19,5 @@ class headerController extends Controller
         return view('home', ['data' => $data,'dataprofile'=>$dataprofile]);
     }
 }
+
+
