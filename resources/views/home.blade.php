@@ -197,7 +197,7 @@
               @endforeach
             </div>
             <a href="#" class="btn btn-primary">Download CV</a>
-            <a href="#contact" class="btn btn-light scrollto">Send Message</a>
+            {{-- <a href="#contact" class="btn btn-light scrollto">Send Message</a> --}}
           </div>
         </div>
     </div>
@@ -213,8 +213,8 @@
               <h2 class="mb-0">Skills</h2>
               <span class="title-letter">S</span>
             </div>
-            <p>Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate
-              orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.</p>
+            {{-- <p>Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate
+              orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.</p> --}}
           </div>
         </div>
         @foreach ($dataskill as $dataskills)
@@ -239,49 +239,21 @@
           <h2 class="mb-0">Experience</h2>
           <span class="title-letter">E</span>
         </div>
-
+      @foreach ( $dataexperience as $dataexperiences )
         <div class="row">
           <div class="col-lg-4 mb-1 mb-lg-0">
-            <p class="h5 mb-0">Marketing Manager</p>
-            <p class="opacity-75">West House Productions, 2015 - 2020</p>
+            <p class="h5 mb-0">{{ $dataexperiences->experience }}</p>
+            <p class="opacity-75">{{ $dataexperiences->company . ', ' . $dataexperiences->startyear .  ' - ' . $dataexperiences->endyear }}</p>
           </div>
           <div class="col-lg-8">
-            <p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor,
-              mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero
-              euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies
-              nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
+            <p>{{ $dataexperiences->description }}</p>
           </div>
         </div>
 
         <hr />
+      @endforeach
 
-        <div class="row">
-          <div class="col-lg-4 mb-1 mb-lg-0">
-            <p class="h5 mb-0">Marketing Consultant</p>
-            <p class="opacity-75">Jump High Marketing, 2012 - 2015</p>
-          </div>
-          <div class="col-lg-8">
-            <p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor,
-              mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero
-              euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies
-              nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="row">
-          <div class="col-lg-4 mb-1 mb-lg-0">
-            <p class="h5 mb-0">Product Manager</p>
-            <p class="opacity-75">Trident Prototyping Studios, 2007 - 2011</p>
-          </div>
-          <div class="col-lg-8">
-            <p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor,
-              mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero
-              euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies
-              nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-          </div>
-        </div>
+      
       </div>
     </section>
     {{-- section experience end --}}
@@ -693,10 +665,11 @@
                   <h2 class="mb-0">Contact</h2>
                   <span class="title-letter">C</span>
                 </div>
-                <p>Want to say hello? Want to know more about me? Give me a call or drop me an email and I will get back
+                <p>Want to say hello? Want to know more about me? Give me a message or drop me an email and I will get back
                   to you as soon as I can.</p>
               </div>
             </div>
+          @foreach ($data as $datas)
             <div class="row mb-8">
               <div class="col-md-4 mb-5 mb-md-0">
                 <div class="feature-block">
@@ -705,8 +678,10 @@
                       <i class="ti-mobile"></i>
                     </div>
                   </div>
-                  <p class="text-center">(+62) 1111 1234567<br />
-                    (084) 2222 1234567</p>
+                  <p class="text-center"><a href="{{ 'https://wa.me/'.$datas->phonenumber }}"
+                    class="text-dark">{{ $datas->phonenumber }}</a><br />
+                </p>
+                  
                 </div>
               </div>
 
@@ -717,11 +692,10 @@
                       <i class="ti-location-pin"></i>
                     </div>
                   </div>
-                  <p class="text-center">69 Halsey St, New York, Ny 10002,<br />
-                    United States</p>
+                  <p class="text-center">{{ $datas->address }}</p>
                 </div>
               </div>
-
+           
               <div class="col-md-4">
                 <div class="feature-block">
                   <div class="feature-icon text-primary mb-4">
@@ -729,14 +703,14 @@
                       <i class="ti-email"></i>
                     </div>
                   </div>
-                  <p class="text-center"><a href="mailto:support@example.com"
-                      class="text-dark">support@example.com</a><br />
-                    <a href="mailto:hello@example.com" class="text-dark">hello@example.com</a>
+                  <p class="text-center"><a href="{{ 'mailto:' . $datas->email }}"
+                      class="text-dark">{{ $datas->email }}</a><br />
                   </p>
                 </div>
               </div>
             </div>
-            <div class="contact-form">
+          @endforeach
+            {{-- <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post"
                 autocomplete="off">
                 <div class="form-row">
@@ -781,7 +755,7 @@
                   </div>
                 </div>
               </form>
-              <div class="contact-form-result text-center"></div>
+              <div class="contact-form-result text-center"></div> --}}
             </div>
           </div>
         </div>
@@ -815,7 +789,7 @@
             </li>
           </ul>
         </nav>
-        <p class="text-center">© 2019 Malat - All Rights Reserved</p>
+        <p class="text-center">© 2025 Kurisu.id - All Rights Reserved</p>
       </div>
     </footer>
 

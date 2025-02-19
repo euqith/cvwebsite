@@ -23,7 +23,7 @@ class HeaderSeeder extends Seeder
             'updatedby' => 'system',
             'initial' => 'CY',
             'email' => 'admin@kurisu.id',
-            'phonenumber' => '082299226696',
+            'phonenumber' => '+6282299226696',
             'downloadpath'=>'',
             'address' => 'Surabaya, Indonesia'
         ]); 
