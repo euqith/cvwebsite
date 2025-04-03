@@ -56,19 +56,21 @@
           <h4 class="mb-12">Sign In to your Account</h4>
           <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
         </div>
-        <form action="#">
+        <form action="{{ route('auth') }}" method="POST">
+          @csrf
           <div class="icon-field mb-16">
             <span class="icon top-50 translate-middle-y">
               <iconify-icon icon="mage:email"></iconify-icon>
             </span>
-            <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email">
+            <input type="email" id="email" class="form-control h-56-px bg-neutral-50 radius-12"
+              placeholder="Email">
           </div>
           <div class="position-relative mb-20">
             <div class="icon-field">
               <span class="icon top-50 translate-middle-y">
                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
               </span>
-              <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password"
+              <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="password"
                 placeholder="Password">
             </div>
             <span

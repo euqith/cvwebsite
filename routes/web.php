@@ -6,6 +6,6 @@ use App\Http\Controllers\loginController;
 
 
 Route::get('/',  [headerController::class, 'index']);
-Route::get('/login', [loginController::class, 'index']);
-
+Route::get('/login', [loginController::class, 'index'])->name('index');
+Route::post('/login',[loginController::class,'authentication'])->name('auth');
 
